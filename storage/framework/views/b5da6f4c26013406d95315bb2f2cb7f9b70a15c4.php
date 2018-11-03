@@ -7,7 +7,7 @@
     <icon-cart></icon-cart>
     Sales 
   </router-link>
-  <router-link to="/drugs" exact>
+  <router-link to="/drugs" >
     <icon-store></icon-store>
     Drugs 
   </router-link>

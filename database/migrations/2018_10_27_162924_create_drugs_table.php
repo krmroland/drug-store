@@ -16,9 +16,6 @@ class CreateDrugsTable extends Migration
         Schema::create('drugs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->date('expiry_date');
-            $table->integer('price');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

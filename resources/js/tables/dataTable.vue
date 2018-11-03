@@ -28,8 +28,8 @@
 			<span class="text-primary">{{ results.currentPage|currency }}</span> of 
 			<span class="text-primary">{{ results.lastPage|currency }}</span>
 		</span>
-		<input type="search" class="form-control col-3" 
-		style="border-radius:25rem ;border-width:1px;" placeholder="search ....." v-model="query">
+		<input type="search" class="form-control col-3 mr-2" 
+		style="border-radius:25rem " placeholder="search ....." v-model="query">
 	</div>
 
 	<div class="relative" :class="{'backdrop':searchText}">

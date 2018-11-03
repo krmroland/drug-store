@@ -4,8 +4,7 @@ $body-bg: #f8fafc;
 // Typography
 $font-family-sans-serif: "Slabo 27px", serif;
 
-$font-size-base: 1.2rem;
-$line-height-base: 1.6;
+$font-size-base: 1.1rem;
 
 // Colors
 // $blue: #3490dc;
@@ -13,13 +12,13 @@ $line-height-base: 1.6;
 // $purple: #9561e2;
 // $pink: #f66d9b;
 // $red: #e3342f;
-// $orange: #f6993f;
-// $yellow: #ffed4a;
+$orange: #f6993f;
+$yellow: #ffed4a;
 // $green: #38c172;
 // $teal: #4dc0b5;
 // $cyan: #6cb2eb;
 $black: #3e4e59;
-$primary: #f25652;
+$primary: #29d;
 $gray-dark: #d9bb93;
 $gray-light: #f1f0e2;
 // $white: #f1f0e2;
@@ -28,3 +27,5 @@ $tertiary: #c2e7f2;
 $border-radius: 0 !default;
 $border-radius-lg: 0 !default;
 $border-radius-sm: 0 !default;
+$swal2-success: $primary !default;
+$swal2-info: $primary !default;

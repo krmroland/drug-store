@@ -9,8 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -20,23 +18,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
-    <header class="header"></header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2">
-          @include('partials.sidebar')
-        </div>
-        <div class="col-md-10">
-          <main>
-            <router-view></router-view>
-          </main>
-        </div>
-      </div>
-   
-    </div>
-
-  </div>
+  <div id="app"></div>
   <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

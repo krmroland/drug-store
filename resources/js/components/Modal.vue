@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="shouldShow">
     <div class="modal-backdrop show" v-if="shouldShow"></div>
     <div class="modal-scrollbar-measure"></div>
     <FadeTransition>
