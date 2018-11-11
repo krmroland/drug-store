@@ -22,7 +22,7 @@
                     Reports
                 </router-link>
                 <a href="/logout" >
-                  <icon-bar-graph></icon-bar-graph>
+                  <icon-user></icon-user>
                   Logout
                 </a>
             </aside>

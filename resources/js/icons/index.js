@@ -17,3 +17,4 @@ Vue.component("icon-trash", require("./icon-trash"));
 Vue.component("icon-search", require("./icon-search"));
 Vue.component("icon-minus-square", require("./icon-minus-square"));
 Vue.component("icon-print", require("./icon-print"));
+Vue.component("icon-user", require("./icon-user"));
