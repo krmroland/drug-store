@@ -35,6 +35,8 @@ export default {
     },
     methods:{
        drugCreated(drug){
+        drug.batches_count=0;
+
          this.data.unshift(drug)
          this.shouldShow=false
          Notify.success("Drug was registered successfully")

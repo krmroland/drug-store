@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Drugs Management sysytem'),
+    'name' => env('APP_NAME', 'Drugs Management system'),
 
     /*
     |--------------------------------------------------------------------------

@@ -13,7 +13,7 @@ export default {
 	props: {
 		fields: { default: () => ({}), type: Object },
 		method: { default: "post" },
-		action: { required: true }
+		action: { required: false }
 	},
 	provide() {
 		return {
@@ -33,9 +33,12 @@ export default {
 
 	methods: {
 		onSubmit() {
-			window.axios[this.method](this.action, this.formFields)
-				.then(({data}) => this.$emit("submitted", data))
-				.catch(this.updateInputErrors.bind(this));
+			if(this.action){
+				return window.axios[this.method](this.action, this.formFields)
+					.then(({data}) => this.$emit("submitted", data))
+					.catch(this.updateInputErrors.bind(this));
+			}
+			this.$emit("submitted", this.formFields)
 		},
 		updateInputErrors(error) {
 			this.errors.set(error.response.data.errors);

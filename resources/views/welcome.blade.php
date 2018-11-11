@@ -7,29 +7,56 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Drug Store</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-        <div id="welcome">
-            <div class="contents">
-                <h2>Online Drug shop system</h2>
-                <p>
-                    A web based drug  management system
-                </p>
-                <a class="btn btn-primary" href="{{ route('login') }}"> Login</a>
+<body id="welcome">
+    <div class="col-md-4 mx-auto mt-2">
+        <div class="card">
+            <h3 class="card-title text-center">{{ config('app.name') }}</h3>
+            <hr>
+            <h4 class="text-center">Login Form</h4>
+            <div class="card-body">
+                <form method="POST" action="/login">
+                    @csrf
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input  type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        
+                        @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        
+                        @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Login
+                        </button>
+
+                    </div>
+                </form>
             </div>
-            
         </div>
-      
+    </div>
 </body>
 </html>

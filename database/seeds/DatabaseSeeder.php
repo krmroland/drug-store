@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //create a default admin
+        User::create([
+            'email'=>'admin@drugs.com',
+            'password'=>bcrypt('secret'),
+            'name'=>'Administrator',
+        ]);
     }
 }

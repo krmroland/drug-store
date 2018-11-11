@@ -9,7 +9,7 @@
                       <icon-dashboard></icon-dashboard>
                       Home
                   </router-link>
-                  <router-link to="/sales" exact>
+                  <router-link to="/sales">
                     <icon-cart></icon-cart>
                     Sales 
                 </router-link>
@@ -21,6 +21,10 @@
                     <icon-bar-graph></icon-bar-graph>
                     Reports
                 </router-link>
+                <a href="/logout" >
+                  <icon-bar-graph></icon-bar-graph>
+                  Logout
+                </a>
             </aside>
         </div>
         <div class="col-md-10">

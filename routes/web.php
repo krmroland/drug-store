@@ -10,12 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/rodgers', function () {
+    $users = App\Task::all();
 
-Route::get('/', 'HomeController@welcome');
-
-Auth::routes();
+    return view('rodgers', ['users'=>$users]);
+});
+Route::get('/', 'HomeController@welcome')->name('login');
 
 Route::get('/home', 'HomeController@index');
+
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
 
 // Catch-all Route...
 Route::get('/{view?}', 'HomeController@index')->where('view', '(.*)');

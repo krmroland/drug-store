@@ -1,6 +1,6 @@
 <template>
     <modal-component :show="shouldShow" size="modal-sm" @closed="closeModel">
-        <h4 slot="title">Register A new Drug</h4>
+        <h5 slot="title">Register A new Drug</h5>
        <FormComponent action="/api/drugs" @submitted="$emit('created',$event)" >
            <div class="form-group">
                <FormInput name="name" placeholder="The drugs name"/>

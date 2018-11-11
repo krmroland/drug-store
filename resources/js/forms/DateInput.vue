@@ -41,10 +41,7 @@ export default BaseInput.extend({
                 return "today";
             }
             return null;
-            // const today = new Date();
-            // const monthStarts = format(startOfMonth(today), "YYYY-MM-DD");
-            // const monthEnds = format(endOfMonth(today), "YYYY-MM-DD");
-            // return `${monthStarts} to ${monthEnds} `;
+
         },
         options() {
             let $options = {

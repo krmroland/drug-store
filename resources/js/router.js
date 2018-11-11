@@ -1,15 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import SalesComponent from "./components/SalesComponent";
-import ReportsComponent from "./components/ReportsComponent";
 Vue.use(VueRouter);
 
 const routes = [
-    { path: "/home", component: require("./components/DashboardComponent") },
     {
         path: "/drugs",
-        component: require("./drugs/LayoutComponent"),
+        component: require("./components/EmptyLayout"),
         children: [
             {
                 path: "/",
@@ -23,8 +20,27 @@ const routes = [
             }
         ]
     },
-    { path: "/sales", component: SalesComponent },
-    { path: "/reports", component: ReportsComponent }
+    {
+        path: "/sales",
+        component: require("./components/EmptyLayout"),
+        children: [
+            {
+                path: "/",
+                component: require("./sales/IndexComponent")
+            },
+            {
+                path: "create",
+                component: require("./sales/CreateComponent")
+            },
+            {
+                path: ":id",
+                props: true,
+                component: require("./sales/ShowSale")
+            }
+        ]
+    },
+    { path: "/reports", component: require("./reports/IndexComponent") },
+    { path: "/home", component: require("./components/DashboardComponent") }
 ];
 
 export default new VueRouter({

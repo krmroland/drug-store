@@ -2,23 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Drug;
+use App\Sale;
 use Illuminate\Http\Request;
 
-class DrugsController extends Controller
+class SalesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->has('batches')) {
-            return Drug::hasBatches()->get();
-        }
+        return  Sale::summaryData();
+    }
 
-        return Drug::withQuantities();
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
     }
 
     /**
@@ -30,35 +35,33 @@ class DrugsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate(['name'=>'required|unique:drugs|min:2|max:100']);
-
-        $drug = Drug::create($data);
-
-        return $drug;
+        return Sale::process($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Drug $drug
+     * @param \App\Sale $sale
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Drug $drug)
+    public function show(Sale $sale)
     {
-        $drug->load('batches');
+        $sale->loadMissing(['drugs'=>function ($query) {
+            $query->with(['batch', 'drug']);
+        }]);
 
-        return $drug;
+        return $sale;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Drug $drug
+     * @param \App\Sale $sale
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drug $drug)
+    public function edit(Sale $sale)
     {
     }
 
@@ -66,25 +69,22 @@ class DrugsController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Drug                $drug
+     * @param \App\Sale                $sale
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Drug $drug)
+    public function update(Request $request, Sale $sale)
     {
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Drug $drug
+     * @param \App\Sale $sale
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Drug $drug)
+    public function destroy(Sale $sale)
     {
-        $drug->delete();
-
-        return response()->json('Drug was deleted successfully');
     }
 }

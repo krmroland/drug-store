@@ -29,4 +29,11 @@ class Drug extends Model
     {
         return static::withCount('batches')->get();
     }
+
+    public function scopeHasBatches($builder)
+    {
+        return $builder->with(['batches'=>function ($query) {
+            return $query->where('quantity', '>', '0');
+        }]);
+    }
 }

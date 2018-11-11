@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrugSalesTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateDrugSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('drug_sales', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('drug_id')->unsigned()->index();
-            $table->integer('sale_id')->unsigned()->index();
-            $table->integer('quantity')->unsigned();
-            $table->integer('unit_price')->unsigned();
-            $table->string('batch_number')->index();
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateDrugSalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drug_sales');
+        Schema::dropIfExists('tasks');
     }
 }

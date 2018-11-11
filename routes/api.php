@@ -13,3 +13,5 @@
 */
 Route::resource('drugs', 'DrugsController');
 Route::resource('drugs.batches', 'DrugBatchesController');
+Route::resource('sales', 'SalesController');
+Route::get('reports', 'ReportsController@general');

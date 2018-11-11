@@ -8,7 +8,7 @@ class Paginator {
 	 * @param      {number}   perPage     the number of items per page
 	 * @param      {number}   currentPage  The current page
 	 */
-	constructor(items = [], perPage = 5, currentPage = 1) {
+	constructor(items = [], perPage = 10, currentPage = 1) {
 		this._items = items;
 		this._perPage = Number(perPage);
 		this._currentPage = Number(currentPage);

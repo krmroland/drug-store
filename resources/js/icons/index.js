@@ -14,3 +14,6 @@ Vue.component("icon-plus", IconPlus);
 Vue.component("icon-save", IconSave);
 Vue.component("icon-puff", require("./icon-puff"));
 Vue.component("icon-trash", require("./icon-trash"));
+Vue.component("icon-search", require("./icon-search"));
+Vue.component("icon-minus-square", require("./icon-minus-square"));
+Vue.component("icon-print", require("./icon-print"));

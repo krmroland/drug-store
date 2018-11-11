@@ -2311,6 +2311,10 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
+fuse.js@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.3.0.tgz#1e4fe172a60687230fb54a5cb247eb96e2e7e885"
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -4403,6 +4407,10 @@ preserve@^0.2.0:
 prettier@^1.7.0:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.3.tgz#90238dd4c0684b7edce5f83b0fb7328e48bd0895"
+
+printd@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/printd/-/printd-1.0.1.tgz#fddfb374b14130d8aa31f02734e3a0f103f6ad98"
 
 private@^0.1.6, private@^0.1.8, private@~0.1.5:
   version "0.1.8"

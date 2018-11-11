@@ -15,8 +15,8 @@
 		<div class="d-flex justify-content-between align-items-center">
 			<span class="mx-2  font-size-2 text-dark">Show</span>
 			<select class="form-control form-control-sm" @change="changePerPage">
-				<option selected>5</option>
-				<option>10</option>
+				<option>5</option>
+				<option selected>10</option>
 				<option >25</option>
 				<option >50</option>
 				<option>100</option>

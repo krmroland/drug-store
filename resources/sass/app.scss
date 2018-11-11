@@ -8,3 +8,9 @@
 @import "animations";
 @import "custom";
 @import "flatpickr";
+
+button {
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
