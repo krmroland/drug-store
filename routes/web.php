@@ -15,11 +15,13 @@ Route::get('/rodgers', function () {
 
     return view('rodgers', ['users'=>$users]);
 });
-Route::get('/', 'HomeController@welcome')->name('login');
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('login', 'Auth\LoginController@login');
+Auth::routes();
+
+Route::get('/', 'HomeController@welcome')->name('login');
+
 Route::get('logout', 'Auth\LoginController@logout');
 
 // Catch-all Route...

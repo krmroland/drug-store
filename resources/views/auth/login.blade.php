@@ -36,6 +36,9 @@
                     </button>
 
                 </div>
+                <div class="form-group">
+                    <a href="{{ route('register') }}">Register instead</a>
+                </div>
             </form>
         </div>
     </div>

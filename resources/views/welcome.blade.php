@@ -52,7 +52,9 @@
                         <button type="submit" class="btn btn-primary btn-block">
                             Login
                         </button>
-
+                        <div class="form-group mt-2">
+                            <a href="{{ route('register') }}">Register instead</a>
+                        </div>
                     </div>
                 </form>
             </div>
